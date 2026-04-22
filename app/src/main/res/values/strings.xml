@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TaskFlow</string>
+    <string name="hint_search">Search your tasks...</string>
+    <string name="label_total">TOTAL</string>
+    <string name="label_pending">PENDING</string>
+    <string name="title_recent_tasks">Recent Tasks</string>
+    <string name="desc_user_profile">User profile picture</string>
+    <string name="desc_add_task">Add new task</string>
+
+</resources>

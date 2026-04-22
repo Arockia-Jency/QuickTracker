@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_deep_teal">#0E3756</color>
+    <color name="secondary_indigo">#4858AB</color>
+
+    <color name="background_gray">#F8F9FA</color>
+    <color name="text_outline">#73777E</color>
+    <color name="outline_variant">#C2C7CE</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="error">#B00020</color>
+    <color name="on_surface_variant">#42474d</color>
+</resources>
