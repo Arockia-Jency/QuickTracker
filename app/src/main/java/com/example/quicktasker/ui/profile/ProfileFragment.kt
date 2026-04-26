@@ -1,9 +1,11 @@
 package com.example.quicktasker
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import com.example.quicktasker.data.ProfileStore
 import com.example.quicktasker.databinding.FragmentProfileBinding
 import com.example.quicktasker.viewmodel.TaskViewModel
 import kotlin.math.roundToInt
@@ -20,6 +22,18 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         _binding = FragmentProfileBinding.bind(view)
 
         taskViewModel.seedIfEmpty()
+
+        ProfileStore.profile.observe(viewLifecycleOwner) { profile ->
+            binding.profileNameText.text = profile.name
+            binding.profileTitleText.text = profile.title
+            val uri = profile.photoUri?.let(Uri::parse)
+            if (uri != null) binding.profileImageView.setImageURI(uri)
+            else binding.profileImageView.setImageResource(R.drawable.ic_user_profile)
+        }
+
+        binding.editProfileButton.setOnClickListener {
+            (activity as? MainActivity)?.openEditProfile()
+        }
 
         taskViewModel.totalCount.observe(viewLifecycleOwner) { binding.totalTasksText.text = it.toString() }
         taskViewModel.doneCount.observe(viewLifecycleOwner) { done ->

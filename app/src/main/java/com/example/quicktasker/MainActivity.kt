@@ -3,6 +3,7 @@ package com.example.quicktasker
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.quicktasker.data.ProfileStore
 import com.example.quicktasker.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ProfileStore.init(this)
 
         // 1. Navigation for standard tabs
         binding.bottomNavigation.setOnItemSelectedListener { item ->
@@ -58,6 +61,14 @@ class MainActivity : AppCompatActivity() {
             .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
             .replace(binding.fragmentContainer.id, TaskDetailsFragment.newInstance(taskId))
             .addToBackStack("task_details")
+            .commit()
+    }
+
+    fun openEditProfile() {
+        supportFragmentManager.beginTransaction()
+            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+            .replace(binding.fragmentContainer.id, EditProfileFragment())
+            .addToBackStack("edit_profile")
             .commit()
     }
 

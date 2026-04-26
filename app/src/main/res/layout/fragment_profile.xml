@@ -19,6 +19,7 @@
             app:cardElevation="0dp">
 
             <ImageView
+                android:id="@+id/profileImageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_user_profile"
@@ -26,6 +27,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/profileNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
@@ -35,10 +37,22 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/profileTitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Senior Project Coordinator"
             android:textColor="@color/text_outline" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editProfileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginTop="14dp"
+            android:text="Edit Profile"
+            android:textAllCaps="false"
+            app:cornerRadius="12dp"
+            app:backgroundTint="@color/secondary_indigo"
+            android:textColor="@color/white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -122,52 +136,6 @@
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="18dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="SAN FRANCISCO, CA"
-                    android:textColor="@color/text_outline"
-                    android:textSize="10sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/temp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="72°F"
-                    android:textColor="@color/primary_deep_teal"
-                    android:textSize="32sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/temp"
-                    android:text="Partly Cloudy"
-                    android:textColor="@color/text_outline" />
-
-                <ImageView
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_alignParentEnd="true"
-                    android:src="@android:drawable/ic_menu_compass"
-                    app:tint="@color/secondary_indigo" />
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
